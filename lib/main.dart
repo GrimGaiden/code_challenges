@@ -30,23 +30,37 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _message = "";
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      _setMessage();
     });
   }
 
   void _decrementCounter() {
     setState(() {
       _counter--;
+      _setMessage();
     });
   }
 
   void _resetCounter() {
     setState(() {
       _counter = 0;
+      _setMessage();
     });
+  }
+
+  void _setMessage() {
+    if (_counter < -5) {
+      _message = "Esto es muy poco";
+    } else if (_counter > 5) {
+      _message = "Esto es mucho";
+    } else {
+      _message = "";
+    }
   }
 
   @override
@@ -84,6 +98,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const Icon(Icons.refresh),
                   ),
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30.0),
+              child: Text(
+                _message,
+                style: const TextStyle(color: Colors.red),
               ),
             )
           ],
