@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(top: 30.0),
               child: Text(
                 _message,
-                style: const TextStyle(color: Colors.red),
+                style: const TextStyle(color: Colors.red, fontSize: 30.0),
               ),
             )
           ],
