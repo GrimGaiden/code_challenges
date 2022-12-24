@@ -1,4 +1,4 @@
-# code_challenges
+# Code challenges learning flutter
 
 Una serie de desafíos para aprender Flutter.
 
