@@ -35,21 +35,20 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
-      _setMessage();
+      _alertDialog();
     });
   }
 
   void _decrementCounter() {
     setState(() {
       _counter--;
-      _setMessage();
+      _alertDialog();
     });
   }
 
   void _resetCounter() {
     setState(() {
       _counter = 0;
-      _setMessage();
     });
   }
 
@@ -60,6 +59,38 @@ class _MyHomePageState extends State<MyHomePage> {
       _message = "Esto es mucho";
     } else {
       _message = "";
+    }
+  }
+
+  void _alertDialog() {
+    if (_counter < -5) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              content: const Text("Esto es muy poco"),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'OK'),
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          });
+    } else if (_counter > 5) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              content: const Text("Esto es mucho"),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'OK'),
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          });
     }
   }
 
