@@ -1,4 +1,4 @@
 # code_challenges
 
-## Day 1
-Añadir 2 botones a la aplicación por defecto, uno que reste y otro que haga set a 0.
+## Day 2
+Make a message appear when the number is lower than -5 and above 5.
