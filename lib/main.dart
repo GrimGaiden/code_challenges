@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     _width = MediaQuery.of(context).size.width;
     _height = MediaQuery.of(context).size.height;
-    _device = Platform.operatingSystem; //not support on web app
+    _device = Platform.operatingSystem; //does not work for web, breaks the app
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
