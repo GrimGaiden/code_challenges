@@ -1,3 +1,6 @@
+import 'package:code_challenges/screens/screen1.dart';
+import 'package:code_challenges/screens/screen2.dart';
+import 'package:code_challenges/screens/screen3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,11 +32,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _selectedIndex = 0;
+  final List _screens = const [Screen1(), Screen2(), Screen3()];
 
-  void _incrementCounter() {
+  void _selectedItem(int index) {
     setState(() {
-      _counter++;
+      _selectedIndex = index;
     });
   }
 
@@ -44,23 +48,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+        child: _screens.elementAt(_selectedIndex),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bed),
+            label: "Screen 1",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.import_export),
+            label: "Screen 2",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.gavel),
+            label: "Screen 3",
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _selectedItem,
       ),
     );
   }
