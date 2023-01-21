@@ -2,6 +2,6 @@
 
 Una serie de desafíos para aprender Flutter.
 
-## Day 11
+## Day 12
 
-Based on the default app, create a theme that changes the colors and font
+Based on the app from day 11, create a file to store the theme info.

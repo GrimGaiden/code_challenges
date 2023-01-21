@@ -1,3 +1,4 @@
+import 'package:code_challenges/myTheme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,13 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        canvasColor: const Color.fromARGB(255, 44, 44, 44),
-        textTheme: const TextTheme(
-            bodyText2: TextStyle(color: Colors.white, fontFamily: "Stormning"),
-            headline4: TextStyle(color: Colors.white, fontFamily: "Stormning")),
-      ),
+      theme: myTheme(),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
