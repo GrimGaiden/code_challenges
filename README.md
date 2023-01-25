@@ -2,6 +2,6 @@
 
 Una serie de desafíos para aprender Flutter.
 
-## Day 12
+## Day 13
 
-Based on the app from day 11, create a file to store the theme info.
+Create a button to change themes.
